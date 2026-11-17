@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проекты: боты и сайты — alot.pro</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <div class="brand">
+        <div class="logo">AP</div>
+        <div>
+          <h1>Проекты: боты и сайты</h1>
+          <p class="sub">alot.pro · фриланс-заказы в реальном времени</p>
+        </div>
+      </div>
+      <div class="status">
+        <div class="status-text">
+          <span id="updated">Загрузка…</span>
+          <span id="auto" class="auto">Автообновление через 60 с</span>
+        </div>
+        <button id="refresh" class="btn" type="button">Обновить список</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="wrap filters">
+      <input id="q" type="search" placeholder="Поиск по заголовку и описанию" autocomplete="off">
+      <select id="type" aria-label="Тип проекта">
+        <option value="all">Все типы</option>
+        <option value="bot">Боты и чаты</option>
+        <option value="site">Сайты</option>
+      </select>
+      <select id="source" aria-label="Источник"></select>
+      <input id="min" type="number" min="0" placeholder="Цена от, ₽" inputmode="numeric">
+      <input id="max" type="number" min="0" placeholder="до, ₽" inputmode="numeric">
+      <select id="sort" aria-label="Сортировка">
+        <option value="new">Сначала новые</option>
+        <option value="old">Сначала старые</option>
+        <option value="price-desc">Цена: по убыванию</option>
+        <option value="price-asc">Цена: по возрастанию</option>
+      </select>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div class="summary">
+      <span id="count">—</span>
+      <span id="err" class="err" hidden></span>
+    </div>
+    <section id="list" class="cards" aria-live="polite">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+    </section>
+    <div id="empty" class="empty" hidden>
+      <strong>Ничего не найдено</strong>
+      <span>Попробуйте изменить фильтры или сбросить поиск.</span>
+      <button id="reset" class="btn ghost" type="button">Сбросить фильтры</button>
+    </div>
+  </main>
+
+  <footer class="wrap foot">
+    <span>Данные: alot.pro. Парсер проверяет новые ID примерно раз в минуту со случайным разбросом, список обновляется сразу после опроса.</span>
+    <span class="chips">
+      <span id="parser" class="tg off">Парсер: проверяю…</span>
+      <span id="tg" class="tg">Telegram: проверяю…</span>
+    </span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
